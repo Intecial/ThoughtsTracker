@@ -30,14 +30,12 @@ public class Sorter {
 
     }
 
-//    private void swap(int first, int second){
-//
-//        int temp;
-//        temp = first;
-//        first = second;
-//        second = temp;
-//
-//    }
+    private void swap(int[] list, int first, int second){
+        int temp = list[first];
+        list[first] = list[second];
+        list[second] = temp;
+
+    }
 
 //    public static void main(String[] args) {
 //
