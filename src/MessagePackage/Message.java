@@ -1,5 +1,7 @@
-import java.time.LocalDateTime;
+package MessagePackage;
 
+import java.time.LocalDateTime;
+import Enum.MoodLabel;
 public class Message {
     private MoodLabel label;
     private String content;

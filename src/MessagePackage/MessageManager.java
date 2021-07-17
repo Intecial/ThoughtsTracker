@@ -1,6 +1,11 @@
+package MessagePackage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+
+
+import MessagePackage.Message;
+
 import java.util.ArrayList;
 
 public class MessageManager {
