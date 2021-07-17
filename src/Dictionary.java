@@ -52,7 +52,7 @@ public class Dictionary {
 
     public void insert(String key, String data) throws KeyException{
         if (isFull()){
-            // Rehash
+            rehash();
         }
         int position = linearProbe(key, true);
 
