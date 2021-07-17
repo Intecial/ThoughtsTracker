@@ -14,4 +14,18 @@ public class Message {
     public MoodLabel getLabel() {
         return this.label;
     }
+
+    public void changeContent(String content) {
+        this.content = content;
+    }
+
+    public void changeLabel(MoodLabel label) {
+        this.label = label;
+    }
+
+    @Override
+    public String toString() {
+        return  "MOOD: " + label + "\n" +
+                "MESSAGE: " + content;
+    }
 }
