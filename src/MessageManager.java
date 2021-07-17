@@ -4,8 +4,20 @@ public class MessageManager {
 
     private ArrayList<Message> messageArrayList;
 
-    private String getMessage(int index){
+    public MessageManager() {
+        //TODO: load csv into messageArrayList
+    }
 
+    public Message getMessage(int index){
+        Message result;
+
+        if (messageArrayList != null) {
+            result = messageArrayList.get(index);
+        } else {
+            result = null;
+        }
+
+        return result;
     }
 
 
