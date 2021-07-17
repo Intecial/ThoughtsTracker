@@ -26,6 +26,21 @@ public class MessageManager {
 
     }
 
+    public void deleteMessage(Message message){
+
+        if(messageArrayList.contains(message)){
+
+            messageArrayList.remove(message);
+
+        }
+        else{
+
+            System.out.println("no message found");
+
+        }
+
+    }
+
 
 
 }
