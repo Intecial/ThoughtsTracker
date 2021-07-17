@@ -28,27 +28,44 @@ public class Sorter {
         int pivot = list[mid];
         swap(list, start, mid);
 
+        int boundary = start;
+
+        for(int k = start+1; k < end+1; k++){
+
+            if(list[k] < pivot){
+
+                boundary++;
+                swap(list, k, boundary);
+
+            }
+
+        }
+
+        swap(list, start, boundary);
+        return boundary;
+
     }
 
     private void swap(int[] list, int first, int second){
+
         int temp = list[first];
         list[first] = list[second];
         list[second] = temp;
 
     }
 
-//    public static void main(String[] args) {
-//
-//        int list[] = {6,8,1,3,2,10};
-//
-//        System.out.println(list);
-//
-//        Sorter sort = new Sorter();
-//
-//        Sorter.sort(list, 0, list.length -1);
-//
-//        System.out.println(list);
-//
-//    }
+    public static void main(String[] args) {
+
+        int list[] = {6,8,1,3,2,10};
+
+        System.out.println(list);
+
+        Sorter sort = new Sorter();
+
+        sort.quick_sort(list);
+
+        System.out.println(list);
+
+    }
 
 }
