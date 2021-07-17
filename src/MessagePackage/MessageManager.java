@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class MessageManager {
 
-    public ArrayList<Message> messageArrayList = new ArrayList<>();
+    private ArrayList<Message> messageArrayList = new ArrayList<>();
     private final String filepath = "."+ File.separator + "saves" + File.separator;
 
     public MessageManager() {
