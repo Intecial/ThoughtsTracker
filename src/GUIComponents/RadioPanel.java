@@ -41,32 +41,4 @@ public class RadioPanel extends JPanel {
         this.setVisible(true);
         this.setBackground(Color.red);
     }
-
-    public JRadioButton getBad() {
-        return bad;
-    }
-
-    public JRadioButton getDown() {
-        return down;
-    }
-
-    public JRadioButton getEcstatic() {
-        return ecstatic;
-    }
-
-    public JRadioButton getGood() {
-        return good;
-    }
-
-    public JRadioButton getGreat() {
-        return great;
-    }
-
-    public JRadioButton getNeutral() {
-        return neutral;
-    }
-
-    public JRadioButton getTerrible() {
-        return terrible;
-    }
 }

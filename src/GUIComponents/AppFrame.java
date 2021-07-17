@@ -1,22 +1,20 @@
 package GUIComponents;
 
-import MessagePackage.MessageManager;
-
 import javax.swing.*;
 
 public class AppFrame extends JFrame{
-    private TextMessagePanel textMessages;
-    private InputMessagePanel inputMessages;
-    private StatisticPanel statisticBox;
+    private JPanel textMessages;
+    private JPanel inputMessages;
+    private JPanel statisticBox;
     private TopButtonPanel saveAndLoad;
     private boolean state;
 
-    public AppFrame(MessageManager m){
+    public AppFrame(){
         state = true;
         textMessages = new TextMessagePanel();
-        inputMessages = new InputMessagePanel(m);
+        inputMessages = new InputMessagePanel();
         statisticBox = new StatisticPanel();
-        saveAndLoad = new TopButtonPanel(m);
+        saveAndLoad = new TopButtonPanel();
         this.setTitle("Thoughts Tracker");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);

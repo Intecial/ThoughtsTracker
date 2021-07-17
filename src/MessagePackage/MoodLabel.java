@@ -1,4 +1,4 @@
-package Enum;
+package MessagePackage;
 
 public enum MoodLabel {
     ECSTATIC,

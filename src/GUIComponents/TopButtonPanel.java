@@ -1,18 +1,12 @@
 package GUIComponents;
 
-import MessagePackage.MessageManager;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class TopButtonPanel extends JPanel implements ActionListener {
+public class TopButtonPanel extends JPanel {
     private JButton save;
     private JButton load;
-    private MessageManager m;
-    public TopButtonPanel(MessageManager m){
-        this.m = m;
+    public TopButtonPanel(){
         this.setBounds(0, 0, 150, 20);
         this.setBackground(new Color(0xbdedff));
         this.setVisible(true);
@@ -31,12 +25,4 @@ public class TopButtonPanel extends JPanel implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == save){
-            m.saveData();
-        }else if(e.getSource() == load){
-//            m.loadData();
-        }
-    }
 }

@@ -4,17 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import MessagePackage.*;
-import Enum.*;
 
 public class InputMessagePanel extends JPanel implements ActionListener{
     private JTextField inputField;
     private JButton enter;
     private RadioPanel radioPanel;
-    private MessageManager mm;
-
-    public InputMessagePanel(MessageManager mm){
-        this.mm = mm;
+    private String message;
+    public InputMessagePanel(){
         this.setBounds(20, 290, 870, 110);
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
@@ -34,26 +30,15 @@ public class InputMessagePanel extends JPanel implements ActionListener{
         this.add(enter);
     }
 
+    public String getMessage(){
+        return message;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Message message = null;
-        if (e.getSource() == radioPanel.getBad() && e.getSource() == enter){
-           message = new Message(MoodLabel.BAD, inputField.getText());
-        }else if(e.getSource() == radioPanel.getDown()&& e.getSource() == enter){
-            message = new Message(MoodLabel.DOWN, inputField.getText());
-        }else if(e.getSource() == radioPanel.getEcstatic()&& e.getSource() == enter){
-            message = new Message(MoodLabel.ECSTATIC, inputField.getText());
-        }else if(e.getSource() == radioPanel.getGood() && e.getSource() == enter){
-             message = new Message(MoodLabel.GOOD, inputField.getText());
-        }else if(e.getSource() == radioPanel.getGreat() && e.getSource() == enter){
-             message = new Message(MoodLabel.GREAT, inputField.getText());
-        }else if(e.getSource() == radioPanel.getNeutral() && e.getSource() == enter){
-             message = new Message(MoodLabel.NEUTRAL, inputField.getText());
-        }else if(e.getSource() == radioPanel.getTerrible() && e.getSource() == enter){
-             message = new Message(MoodLabel.TERRIBLE, inputField.getText());
+        if (e.getSource() == enter){
+            message = inputField.getText();
         }
-        mm.addMessage(message);
     }
 
     private void createButtonProperties(){
