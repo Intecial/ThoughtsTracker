@@ -57,7 +57,7 @@ public class Message {
 
     @Override
     public String toString() {
-        // GOOD,test message,2021-7-17,21:28:30:11
+        // GOOD,I'm feeling good,2021-7-17,21:53:59:592047400
         return  label + "," +
                 content + "," +
                 dateTime.getYear() + "-" + dateTime.getMonthValue() + "-" + dateTime.getDayOfMonth() + "," +
