@@ -20,6 +20,12 @@ public class MessageManager {
         return result;
     }
 
+    public void insertMessage(Message message){
+
+        messageArrayList.add(message);
+
+    }
+
 
 
 }
