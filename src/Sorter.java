@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import static java.util.Collections.swap;
 
 public class Sorter {
@@ -58,13 +60,13 @@ public class Sorter {
 
         int list[] = {6,8,1,3,2,10};
 
-        System.out.println(list);
+        System.out.println(Arrays.toString(list));
 
         Sorter sort = new Sorter();
 
         sort.quick_sort(list);
 
-        System.out.println(list);
+        System.out.println(Arrays.toString(list));
 
     }
 
