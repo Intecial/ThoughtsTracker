@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class MessageManager {
 
-    private ArrayList<Message> messageArrayList = new ArrayList<>();
+    public ArrayList<Message> messageArrayList = new ArrayList<>();
     private final String filepath = "."+ File.separator + "saves" + File.separator;
 
     public MessageManager() {
-        //TODO: load csv into messageArrayList
     }
 
     public Message getMessage(int index){
@@ -63,14 +62,21 @@ public class MessageManager {
 
     }
 
-    public void loadData() {
+    public void loadData(String filename) {
         try{
-            FileReader fileReader = new FileReader(this.filepath);
+            this.messageArrayList = new ArrayList<>();
+
+            FileReader fileReader = new FileReader(this.filepath + filename);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+            String line;
 
-        } catch(FileNotFoundException fileNotFoundException) {
-            System.out.println(fileNotFoundException + ", error occurred");
+            while ((line = bufferedReader.readLine()) != null) {
+                messageArrayList.add(new Message(line));
+            }
+
+        } catch(Exception e) {
+            System.out.println(e + ", error occurred");
         }
 
 
