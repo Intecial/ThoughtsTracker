@@ -1,24 +1,56 @@
+import static java.util.Collections.swap;
+
 public class Sorter {
 
-    public void sort(int[] data, int l, int r){
-        int left = l;
-        int right = r;
-        int pivot = data[(l+r)/2];
+    public void quick_sort(int[] list){
 
-        do{
-            while(data[left] < pivot) left++;
-            while(data[right] > pivot) right--;
-            if(left <= right){
-                int temp = data[left];
-                data[left] = data[right];
-                data[right] = temp;
-                left++;
-                right--;
-            }
-        }while (left <= right);
+        int start = 0;
+        int end = list.length -1;
+        quick_sort_aux(list, start, end);
 
-        if(l < right) sort(data, l, right);
-        if(r > left) sort(data, left, r);
     }
+
+    private void quick_sort_aux(int[] list, int start, int end) {
+
+        if(start < end){
+
+            int boundary = partition(list, start, end);
+            quick_sort_aux(list, start, boundary-1);
+            quick_sort_aux(list, boundary+1, end);
+
+        }
+
+    }
+
+    private int partition(int[] list, int start, int end){
+
+        int mid = (start+end)/2;
+        int pivot = list[mid];
+        swap(list, start, mid);
+
+    }
+
+//    private void swap(int first, int second){
+//
+//        int temp;
+//        temp = first;
+//        first = second;
+//        second = temp;
+//
+//    }
+
+//    public static void main(String[] args) {
+//
+//        int list[] = {6,8,1,3,2,10};
+//
+//        System.out.println(list);
+//
+//        Sorter sort = new Sorter();
+//
+//        Sorter.sort(list, 0, list.length -1);
+//
+//        System.out.println(list);
+//
+//    }
 
 }
