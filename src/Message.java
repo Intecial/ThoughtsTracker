@@ -1,10 +1,15 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Message {
     private MoodLabel label;
     private String content;
+    private final Calendar timeDate;
 
     public Message(MoodLabel label, String content) {
         this.label = label;
         this.content = content;
+        this.timeDate = new GregorianCalendar();
     }
 
     public String getContent() {
@@ -13,6 +18,10 @@ public class Message {
 
     public MoodLabel getLabel() {
         return this.label;
+    }
+
+    public Calendar getTimeDate() {
+        return timeDate;
     }
 
     public void changeContent(String content) {
@@ -26,6 +35,7 @@ public class Message {
     @Override
     public String toString() {
         return  "MOOD: " + label + "\n" +
-                "MESSAGE: " + content;
+                "MESSAGE: " + content + "\n" +
+                "DATE: " + timeDate.getTime();
     }
 }
