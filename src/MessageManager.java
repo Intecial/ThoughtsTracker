@@ -1,21 +1,13 @@
-package MessagePackage;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-
-
-import MessagePackage.Message;
-
+import java.io.*;
 import java.util.ArrayList;
 
 public class MessageManager {
 
     private ArrayList<Message> messageArrayList = new ArrayList<>();
-    private String filepath;
+    private final String filepath = "."+ File.separator + "saves" + File.separator;
 
-    public MessageManager(String filepath) {
+    public MessageManager() {
         //TODO: load csv into messageArrayList
-        this.filepath = filepath;
     }
 
     public Message getMessage(int index){
@@ -51,10 +43,10 @@ public class MessageManager {
 
     }
 
-    public void saveData() {
+    public void saveData(String filename) {
 
         try {
-            PrintWriter writer = new PrintWriter(new File(this.filepath));
+            PrintWriter writer = new PrintWriter(new File(this.filepath + filename));
 
             for (Message message : messageArrayList) {
                 String csvLine = message.toString() + "\n";
@@ -66,6 +58,19 @@ public class MessageManager {
         } catch(Exception e) {
             System.out.println(e + ", " + "an error has occurred");
         }
+
+    }
+
+    public void loadData() {
+        try{
+            FileReader fileReader = new FileReader(this.filepath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+
+        } catch(FileNotFoundException fileNotFoundException) {
+            System.out.println(fileNotFoundException + ", error occurred");
+        }
+
 
     }
 
