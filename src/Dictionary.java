@@ -47,7 +47,6 @@ public class Dictionary {
                 }
             }
         }
-
     }
 
     public void insert(String key, String data) throws KeyException{
