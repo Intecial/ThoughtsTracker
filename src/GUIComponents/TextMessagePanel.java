@@ -17,6 +17,7 @@ public class TextMessagePanel extends JPanel {
         displayField.setPreferredSize(new Dimension(560, 240));
         displayField.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         displayField.setEditable(false);
+
         this.add(displayField);
     }
 }

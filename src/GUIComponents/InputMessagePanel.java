@@ -1,5 +1,9 @@
 package GUIComponents;
 
+import MessagePackage.Message;
+import MessagePackage.MessageManager;
+import MessagePackage.MoodLabel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,8 +13,9 @@ public class InputMessagePanel extends JPanel implements ActionListener{
     private JTextField inputField;
     private JButton enter;
     private RadioPanel radioPanel;
-    private String message;
-    public InputMessagePanel(){
+    private MessageManager m;
+    public InputMessagePanel(MessageManager m){
+        this.m = m;
         this.setBounds(20, 290, 870, 110);
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
@@ -28,26 +33,59 @@ public class InputMessagePanel extends JPanel implements ActionListener{
         this.add(inputField);
         this.add(radioPanel);
         this.add(enter);
-    }
+        radioPanel.getTerrible().addActionListener(this);
+        radioPanel.getNeutral().addActionListener(this);
+        radioPanel.getGreat().addActionListener(this);
+        radioPanel.getGood().addActionListener(this);
+        radioPanel.getEcstatic().addActionListener(this);
+        radioPanel.getDown().addActionListener(this);
+        radioPanel.getBad().addActionListener(this);
 
-    public String getMessage(){
-        return message;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == enter){
-            message = inputField.getText();
+        Message message = null;
+        MoodLabel label = null;
+            if( radioPanel.getTerrible().isSelected() ){
+                label = MoodLabel.TERRIBLE;
+            }
+            else if(radioPanel.getBad().isSelected()){
+                label = MoodLabel.BAD;
+            }
+            else if(radioPanel.getDown().isSelected()){
+                label = MoodLabel.DOWN;
+            }
+            else if(radioPanel.getEcstatic().isSelected()){
+                label = MoodLabel.ECSTATIC;
+            }
+            else if(radioPanel.getGood().isSelected()){
+                label = MoodLabel.GOOD;
+            }
+            else if(radioPanel.getGreat().isSelected()){
+                label = MoodLabel.GREAT;
+            }
+            else if(radioPanel.getNeutral().isSelected()){
+                label = MoodLabel.NEUTRAL;
+            }
+
+        if(e.getSource() == enter) {
+            message = new Message(label, inputField.getText());
+            m.addMessage(message);
         }
+
     }
 
     private void createButtonProperties(){
         enter.setPreferredSize(new Dimension(130, 100));
         enter.addActionListener(this);
+
         enter.setText("Enter");
+
         enter.setFocusable(false);
         enter.setHorizontalTextPosition(JButton.CENTER);
         enter.setVerticalTextPosition(JButton.CENTER);
+
         enter.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         enter.setBackground(new Color(0x6fbdd1));
         enter.setBorder(BorderFactory.createRaisedBevelBorder());
