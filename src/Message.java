@@ -34,8 +34,6 @@ public class Message {
 
     @Override
     public String toString() {
-        return  "MOOD: " + label + "\n" +
-                "MESSAGE: " + content + "\n" +
-                "DATE: " + timeDate.getTime();
+        return  label + "," + content + "," + timeDate.getTime();
     }
 }
