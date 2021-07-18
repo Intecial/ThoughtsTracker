@@ -21,9 +21,12 @@ This contains the word counts and five most frequenty used words on the right si
 This applies when the user loads the existing file too, it will show the statistics until now.
 
 
-What field this program will help on in future :
+In which field will this program help on :
 
-
+Declutting mind - can jot down thoughts then and there to clear the mind and to organize the thoughts
+Keeping records and understanding - Writing the thoughts down will help to develop yourself to be more mindful, also helps to keep track of the emotions then and compare
+sorting priorities - We can keep record of brilliant ideas in the tracker, sometimes if you loose them, this program will come in handy
+Being relaxed via writing ideas/thoughts down - It helps you to calm yourself down while organizing the thoughts via writing them down
 
 ------------------------------------------------------
 How to launch the program :
