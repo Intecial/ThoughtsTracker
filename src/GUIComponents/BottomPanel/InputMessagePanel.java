@@ -1,5 +1,6 @@
-package GUIComponents;
+package GUIComponents.BottomPanel;
 
+import GUIComponents.TopPanel.TextMessagePanel;
 import MessagePackage.Message;
 import MessagePackage.MessageManager;
 import MessagePackage.MoodLabel;
@@ -18,10 +19,10 @@ public class InputMessagePanel extends JPanel implements ActionListener{
     public InputMessagePanel(MessageManager m, TextMessagePanel tmp){
         this.m = m;
         this.tmp = tmp;
-        this.setBounds(20, 290, 870, 110);
+        this.setBounds(20, 290, 840, 110);
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
-        this.setLayout(new FlowLayout());
+        this.setLayout(new FlowLayout(FlowLayout.LEADING));
         enter = new JButton();
         createButtonProperties();
 

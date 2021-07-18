@@ -1,3 +1,5 @@
+package System;
+
 import java.util.ArrayList;
 import java.util.SplittableRandom;
 
@@ -73,13 +75,13 @@ public class Sorter {
 
 //    public static void main(String[] args) {
 //
-//        Tuple[] test = new Tuple[5];
+//        System.Tuple[] test = new System.Tuple[5];
 //
-//        Tuple t1 = new Tuple(3, 7);
-//        Tuple t2 = new Tuple(2, 1);
-//        Tuple t3 = new Tuple(8, 3);
-//        Tuple t4 = new Tuple(9, 6);
-//        Tuple t5 = new Tuple(1, 2);
+//        System.Tuple t1 = new System.Tuple(3, 7);
+//        System.Tuple t2 = new System.Tuple(2, 1);
+//        System.Tuple t3 = new System.Tuple(8, 3);
+//        System.Tuple t4 = new System.Tuple(9, 6);
+//        System.Tuple t5 = new System.Tuple(1, 2);
 //
 //        test[0] = t1;
 //        test[1] = t2;
@@ -87,7 +89,7 @@ public class Sorter {
 //        test[3] = t4;
 //        test[4] = t5;
 //
-//        Sorter sort = new Sorter();
+//        System.Sorter sort = new System.Sorter();
 //        sort.mergeSort(test);
 //
 //        for(int i = 0; i < test.length; i++){

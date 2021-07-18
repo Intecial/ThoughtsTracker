@@ -1,5 +1,6 @@
 import GUIComponents.AppFrame;
 import MessagePackage.*;
+import System.*;
 
 public class Application {
     public static void main(String[] args) {

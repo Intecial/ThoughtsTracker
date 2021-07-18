@@ -1,4 +1,4 @@
-package GUIComponents;
+package GUIComponents.BottomPanel;
 
 import javax.swing.*;
 import java.awt.*;

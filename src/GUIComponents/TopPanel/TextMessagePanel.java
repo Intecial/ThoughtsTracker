@@ -1,4 +1,4 @@
-package GUIComponents;
+package GUIComponents.TopPanel;
 
 import MessagePackage.Message;
 import MessagePackage.MessageManager;
@@ -9,22 +9,21 @@ import java.util.ArrayList;
 
 public class TextMessagePanel extends JPanel {
     private JTextArea displayField;
+    private JTextArea statisticsBox;
     private MessageManager m;
     public TextMessagePanel(MessageManager m){
         // TextMessage box
         this.m = m;
-        this.setBounds(20, 20, 570, 250);
-        this.setPreferredSize(new Dimension(560, 250));
+        this.setBounds(20, 20, 840, 250);
         this.setLayout(new FlowLayout(FlowLayout.LEADING));
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
 
-        displayField = new JTextArea();
-        displayField.setPreferredSize(new Dimension(560, 240));
-        displayField.setFont(new Font("Comic Sans", Font.PLAIN, 20));
-        displayField.setEditable(false);
-        displayField.setLayout(new FlowLayout());
+        displayField = new DisplayField();
+        statisticsBox = new StatisticPanel();
+
         this.add(displayField);
+        this.add(statisticsBox);
     }
 
     public void clearField(){

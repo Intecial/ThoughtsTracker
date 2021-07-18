@@ -1,15 +1,14 @@
-package GUIComponents;
+package GUIComponents.CornerPanel;
 
+import GUIComponents.TopPanel.TextMessagePanel;
 import MessagePackage.MessageManager;
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoadPrompt extends Prompt implements ActionListener {
 
-    private  TextMessagePanel tmp;
+    private TextMessagePanel tmp;
     public LoadPrompt(MessageManager m, TextMessagePanel tmp){
        super(m);
         button.addActionListener(this);

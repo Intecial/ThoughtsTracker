@@ -1,5 +1,9 @@
-package GUIComponents;
+package GUIComponents.CornerPanel;
 
+import GUIComponents.CornerPanel.LoadPrompt;
+import GUIComponents.CornerPanel.Prompt;
+import GUIComponents.CornerPanel.SavePrompt;
+import GUIComponents.TopPanel.TextMessagePanel;
 import MessagePackage.MessageManager;
 
 import javax.swing.*;

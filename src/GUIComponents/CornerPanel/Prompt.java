@@ -1,4 +1,4 @@
-package GUIComponents;
+package GUIComponents.CornerPanel;
 
 import MessagePackage.MessageManager;
 
