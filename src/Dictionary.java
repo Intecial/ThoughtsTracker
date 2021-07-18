@@ -128,7 +128,15 @@ public class Dictionary {
 
     public Tuple[] getTable(){
 
-        return table;
+        Tuple[] res = new Tuple[table.length];
+
+        for (int i = 0; i < res.length; i++){
+
+            res[i] = table[i];
+
+        }
+
+        return res;
 
     }
 
