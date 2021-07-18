@@ -23,6 +23,10 @@ public class MessageManager {
         return result;
     }
 
+    public ArrayList<Message> getMessageArrayList() {
+        return messageArrayList;
+    }
+
     public void addMessage(Message message){
 
         messageArrayList.add(message);
