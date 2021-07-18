@@ -14,8 +14,10 @@ public class InputMessagePanel extends JPanel implements ActionListener{
     private JButton enter;
     private RadioPanel radioPanel;
     private MessageManager m;
-    public InputMessagePanel(MessageManager m){
+    private TextMessagePanel tmp;
+    public InputMessagePanel(MessageManager m, TextMessagePanel tmp){
         this.m = m;
+        this.tmp = tmp;
         this.setBounds(20, 290, 870, 110);
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
@@ -70,8 +72,16 @@ public class InputMessagePanel extends JPanel implements ActionListener{
             }
 
         if(e.getSource() == enter) {
+            String messageToDisplay = null;
             message = new Message(label, inputField.getText());
+            if(m.getMessageArrayList().size() != 0) {
+                messageToDisplay = "\n" + message.getContent();
+            }else if(m.getMessageArrayList().size() == 0){
+                messageToDisplay = message.getContent();
+            }
             m.addMessage(message);
+            tmp.appendToText(messageToDisplay);
+
         }
 
     }

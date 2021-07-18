@@ -9,15 +9,19 @@ import java.awt.event.ActionListener;
 
 public class LoadPrompt extends Prompt implements ActionListener {
 
-    public LoadPrompt(MessageManager m){
+    private  TextMessagePanel tmp;
+    public LoadPrompt(MessageManager m, TextMessagePanel tmp){
        super(m);
         button.addActionListener(this);
+        this.tmp = tmp;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == button){
             m.loadData(text.getText());
+            tmp.clearField();
+            tmp.loadField();
             prompt.dispose();
         }
     }

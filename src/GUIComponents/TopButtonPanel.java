@@ -12,8 +12,10 @@ public class TopButtonPanel extends JPanel implements ActionListener {
     private JButton load;
     private JFrame newPrompt;
     private MessageManager m;
-    public TopButtonPanel(MessageManager m){
+    private TextMessagePanel tmp;
+    public TopButtonPanel(MessageManager m, TextMessagePanel tmp){
         this.m = m;
+        this.tmp = tmp;
         this.setBounds(0, 0, 150, 20);
         this.setBackground(new Color(0xbdedff));
         this.setVisible(true);
@@ -43,7 +45,7 @@ public class TopButtonPanel extends JPanel implements ActionListener {
             Prompt savePrompt = new SavePrompt(m);
         }else if(e.getSource() == load){
             System.out.println("Loaded");
-            Prompt loadPrompt = new LoadPrompt(m);
+            Prompt loadPrompt = new LoadPrompt(m, tmp);
         }
     }
 }

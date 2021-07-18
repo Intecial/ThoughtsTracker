@@ -15,10 +15,10 @@ public class AppFrame extends JFrame {
 
     public AppFrame(MessageManager m) {
         state = true;
-        textMessages = new TextMessagePanel();
-        inputMessages = new InputMessagePanel(m);
+        textMessages = new TextMessagePanel(m);
+        inputMessages = new InputMessagePanel(m, textMessages);
         statisticBox = new StatisticPanel();
-        saveAndLoad = new TopButtonPanel(m);
+        saveAndLoad = new TopButtonPanel(m, textMessages);
         this.setTitle("Thoughts Tracker");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
