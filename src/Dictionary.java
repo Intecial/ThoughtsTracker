@@ -124,6 +124,12 @@ public class Dictionary {
             position = (position + 1) % table.length;
         }
 
+    }
+
+    public Tuple[] getTable(){
+
+        return table;
 
     }
+
 }

@@ -35,8 +35,16 @@ public class Statistics {
         }
     }
 
-    public String displayStats() {
+    public void getWords(){
+
+
+
+    }
+
+    public String displayStats(){
+
         return "";
+
     }
 
 }
