@@ -1,4 +1,3 @@
-
 Author : Louis Juliano, Giyeong Lee, Lars Tan Pei Sheng
 
 Program name : Thoughts Tracker
