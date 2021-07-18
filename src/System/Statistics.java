@@ -10,33 +10,25 @@ public class Statistics {
 
     private MessageManager messageManager;
 
-    private Dictionary wordDictionary = new Dictionary(4861, 31);
-    private ArrayList<Message> wordList = new ArrayList<>();
-    private ArrayList<Tuple> topFive = new ArrayList<>();
-
     public Statistics(MessageManager messageManager) {
         this.messageManager = messageManager;
     }
 
-    public String generateTopFive(){
+    public String generateTopFive(Dictionary wordDictionary){
+            Tuple[] temp = wordDictionary.getTable();
 
-        wordList = messageManager.getMessageArrayList();
-        splitSentence(wordList);
+            Tuple[] tupleArray = new Tuple[wordDictionary.getCount()];
 
-        Tuple[] temp = wordDictionary.getTable();
-
-        Tuple[] tupleArray = new Tuple[wordDictionary.getCount()];
-
-        int j = 0;
-        for(int i = 0; i < temp.length; i++){
-            if (temp[i] != null){
-                tupleArray[j] = temp[i];
-                j += 1;
+            int j = 0;
+            for (int i = 0; i < temp.length; i++) {
+                if (temp[i] != null) {
+                    tupleArray[j] = temp[i];
+                    j += 1;
+                }
             }
-        }
 
-        Sorter sorter = new Sorter();
-        sorter.mergeSort(tupleArray);
+            Sorter sorter = new Sorter();
+            sorter.mergeSort(tupleArray);
 
         String strTuples = "";
         int limit = 5;
@@ -48,10 +40,11 @@ public class Statistics {
             }
         }
 
-        String result = "Top 5 most used words: " + "\n" + strTuples;
+            String result = "Top 5 most used words: " + "\n" + strTuples;
 
-        return result;
-    }
+            return result;
+        }
+
 
     public String generateMessageCount() {
 
@@ -65,27 +58,12 @@ public class Statistics {
         return result;
     }
 
-    public int getCount(){
+    public int getMessageCount(){
         int count = 0;
         for (Message msg: messageManager.getMessageArrayList()){
             count ++;
         }
         return count;
-    }
-
-
-
-    public void splitSentence(ArrayList<Message> array){
-
-        for (Message msg: array) {
-            String msgContent = msg.getContent();
-            String[] splitContent = msgContent.split(" ");
-
-            for (String word: splitContent) {
-                wordDictionary.insert(word, 1);
-            }
-        }
-
     }
 
     public String displayStats(){

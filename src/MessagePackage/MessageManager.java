@@ -1,10 +1,11 @@
 package MessagePackage;
+import System.Dictionary;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class MessageManager {
-
+    private Dictionary wordDictionary = new Dictionary(4861, 31);
     private ArrayList<Message> messageArrayList = new ArrayList<>();
     private final String filepath = "."+ File.separator + "saves" + File.separator;
 
@@ -13,13 +14,11 @@ public class MessageManager {
 
     public Message getMessage(int index){
         Message result;
-
         if (messageArrayList != null) {
             result = messageArrayList.get(index);
         } else {
             result = null;
         }
-
         return result;
     }
 
@@ -28,25 +27,42 @@ public class MessageManager {
     }
 
     public void addMessage(Message message){
-
         messageArrayList.add(message);
+        splitSentence(message);
 
     }
 
     public void deleteMessage(Message message){
-
         if(messageArrayList.contains(message)){
-
             messageArrayList.remove(message);
-
         }
         else{
-
             System.out.println("no message found");
-
         }
 
     }
+
+    public Dictionary getWordDictionary() {
+        return wordDictionary;
+    }
+
+    public void splitSentence(Message sentence){
+        String content = sentence.getContent();
+        String[] splitContent = content.split(" ");
+
+        for (String word: splitContent){
+            wordDictionary.insert(word, 1);
+            System.out.println(word + " Inserted");
+        }
+    }
+
+
+    public void loadSentence(ArrayList<Message> array){
+        for (Message msg: array) {
+            splitSentence(msg);
+        }
+    }
+
 
     public void saveData(String filename) {
 

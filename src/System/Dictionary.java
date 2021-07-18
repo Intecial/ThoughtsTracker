@@ -64,6 +64,7 @@ public class Dictionary {
         if (table[position] == null){
             table[position] = new Tuple(key, data);
             count++;
+            System.out.println("Incremented");
         } else {
             int value = (int)table[position].getSecond() + data;
             table[position] = new Tuple(key, value);

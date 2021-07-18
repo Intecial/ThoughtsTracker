@@ -6,11 +6,14 @@ import MessagePackage.MessageManager;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import System.*;
 
 public class TextMessagePanel extends JPanel {
-    private JTextArea displayField;
+    private DisplayField displayField;
     private StatisticPanel statisticsBox;
     private MessageManager m;
+    private JScrollPane scroll;
+
     public TextMessagePanel(MessageManager m){
         // TextMessage box
         this.m = m;
@@ -19,10 +22,21 @@ public class TextMessagePanel extends JPanel {
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
 
+
         displayField = new DisplayField();
+        scroll = new JScrollPane();
+        scroll.setPreferredSize(new Dimension(18, 240));
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scroll.getViewport().setBackground(Color.WHITE);
+        scroll.setViewportView(displayField);
         statisticsBox = new StatisticPanel(m);
 
+
+//        this.add(scroll);
         this.add(displayField);
+
+//        this.add(displayField.getScroll());
+
         this.add(statisticsBox);
     }
 
@@ -49,6 +63,8 @@ public class TextMessagePanel extends JPanel {
     }
 
     public void appendToText(String message){
+
+
         displayField.append(message);
         statisticsBox.clear();
         statisticsBox.main();

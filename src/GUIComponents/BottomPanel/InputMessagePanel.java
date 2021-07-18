@@ -4,6 +4,7 @@ import GUIComponents.TopPanel.TextMessagePanel;
 import MessagePackage.Message;
 import MessagePackage.MessageManager;
 import MessagePackage.MoodLabel;
+import System.Statistics;
 
 import javax.swing.*;
 import java.awt.*;
