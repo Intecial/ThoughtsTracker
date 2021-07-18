@@ -1,18 +1,21 @@
 package GUIComponents;
 
+import MessagePackage.Message;
+import MessagePackage.MessageManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Prompt implements ActionListener {
+public class SavePrompt implements ActionListener {
     private JFrame prompt = new JFrame();
     private JButton button;
     private JTextField text;
     private String filename;
-    private boolean state;
-    public Prompt(){
-        state = true;
+    private MessageManager m;
+    public SavePrompt(MessageManager m){
+        this.m = m;
         prompt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         prompt.setVisible(true);
         prompt.setSize(500, 500);
@@ -41,11 +44,15 @@ public class Prompt implements ActionListener {
         return filename;
     }
 
+    public JTextField getTextField() {
+        return text;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == button){
+            m.saveData(text.getText());
             prompt.dispose();
-            filename = text.getText();
         }
     }
 }
