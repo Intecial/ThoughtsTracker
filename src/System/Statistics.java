@@ -17,7 +17,7 @@ public class Statistics {
         this.messageManager = messageManager;
     }
 
-    public ArrayList<Tuple> generateTopFive(){
+    public String generateTopFive(){
 
         wordList = messageManager.getMessageArrayList();
         splitSentence(wordList);
@@ -36,7 +36,14 @@ public class Statistics {
 
         }
 
-        return topFive;
+        String result = "Top 5 most used words: " + "\n" +
+                topFive.get(0) + " " +
+                topFive.get(1) + " " +
+                topFive.get(2) + " " +
+                topFive.get(3) + " " +
+                topFive.get(4);
+
+        return result;
 
     }
 
