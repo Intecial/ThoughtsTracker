@@ -2,55 +2,71 @@ import java.util.ArrayList;
 
 public class Sorter {
 
-    public void quickSort(int[] list){
+    public void mergeSort(int[] array){
+
+        int[] temp = new int[array.length];
 
         int start = 0;
-        int end = list.length -1;
-        quickSortAux(list, start, end);
+
+        int end = array.length -1;
+
+        mergeSortAux(array, start, end, temp);
 
     }
 
-    private void quickSortAux(int[] list, int start, int end) {
+    public void mergeSortAux(int[] array, int start, int end, int[] temp){
 
-        if(start < end){
+        if(start != end){
 
-            int boundary = partition(list, start, end);
-            quickSortAux(list, start, boundary-1);
-            quickSortAux(list, boundary+1, end);
+            int mid = (start+end)/2;
 
-        }
+            mergeSortAux(array, start, mid, temp);
+            mergeSortAux(array, mid+1, end, temp);
 
-    }
+            mergeArrays(array, start, mid, end, temp);
 
-    private int partition(int[] list, int start, int end){
+            for (int i = start; i < end+1; i++){
 
-        int mid = (start+end)/2;
-        int pivot = list[mid];
-        swap(list, start, mid);
-
-        int boundary = start;
-
-        for(int k = start+1; k < end+1; k++){
-
-            if(list[k] < pivot){
-
-                boundary++;
-                swap(list, k, boundary);
+                array[i] = temp[i];
 
             }
 
         }
 
-        swap(list, start, boundary);
-        return boundary;
-
     }
 
-    private void swap(int[] list, int first, int second){
+    public void mergeArrays(int[] a, int start, int mid, int end, int[] temp){
 
-        int temp = list[first];
-        list[first] = list[second];
-        list[second] = temp;
+        int ia = start;
+        int ib = mid+1;
+        for (int k = start; k < end+1; k++){
+
+            if(ia > mid){
+
+                temp[k] = a[ib];
+                ib++;
+
+            }
+            else if(ib > end){
+
+                temp[k] = a[ia];
+                ia++;
+
+            }
+            else if(a[ia] <= a[ib]){
+
+                temp[k] = a[ia];
+                ia ++;
+
+            }
+            else{
+
+                temp[k] = a[ib];
+                ib++;
+
+            }
+
+        }
 
     }
 
