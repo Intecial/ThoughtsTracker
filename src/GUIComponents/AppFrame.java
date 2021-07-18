@@ -24,6 +24,7 @@ public class AppFrame extends JFrame {
         this.setSize(920, 450);
         this.setVisible(true);
 
+
         this.add(saveAndLoad);
         this.add(textMessages);
         this.add(inputMessages);
