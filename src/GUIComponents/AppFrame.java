@@ -6,6 +6,7 @@ import GUIComponents.TopPanel.TextMessagePanel;
 import MessagePackage.MessageManager;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class AppFrame extends JFrame {
     private TextMessagePanel textMessages;
@@ -23,7 +24,7 @@ public class AppFrame extends JFrame {
         this.setResizable(true);
         this.setSize(920, 450);
         this.setVisible(true);
-
+        this.getContentPane().setBackground(new Color(0xbdedff));
 
         this.add(saveAndLoad);
         this.add(textMessages);

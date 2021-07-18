@@ -38,21 +38,12 @@ public class Statistics {
         Sorter sorter = new Sorter();
         sorter.mergeSort(tupleArray);
 
-        int counter = 0;
-
-        for(int i = tupleArray.length - 1; i > tupleArray.length - 6; i--){
-
-            topFive.add(counter, tupleArray[i]);
-            counter++;
-
-        }
-
         String result = "Top 5 most used words: " + "\n" +
-                topFive.get(0) + "\n" +
-                topFive.get(1) + "\n" +
-                topFive.get(2) + "\n" +
-                topFive.get(3) + "\n" +
-                topFive.get(4);
+                tupleArray[tupleArray.length - 1] + "\n" +
+                tupleArray[tupleArray.length - 2] + "\n" +
+                tupleArray[tupleArray.length - 3] + "\n" +
+                tupleArray[tupleArray.length - 4] + "\n" +
+                tupleArray[tupleArray.length - 5];
 
         return result;
     }
