@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class TextMessagePanel extends JPanel {
     private JTextArea displayField;
-    private JTextArea statisticsBox;
+    private StatisticPanel statisticsBox;
     private MessageManager m;
     public TextMessagePanel(MessageManager m){
         // TextMessage box
@@ -20,7 +20,7 @@ public class TextMessagePanel extends JPanel {
         this.setBackground(new Color(0xbdedff));
 
         displayField = new DisplayField();
-        statisticsBox = new StatisticPanel();
+        statisticsBox = new StatisticPanel(m);
 
         this.add(displayField);
         this.add(statisticsBox);
@@ -29,6 +29,7 @@ public class TextMessagePanel extends JPanel {
     public void clearField(){
         displayField.selectAll();
         displayField.replaceSelection("");
+        statisticsBox.clear();
     }
 
 
@@ -42,9 +43,14 @@ public class TextMessagePanel extends JPanel {
                 displayField.append(arList.get(i).displayMessage());
             }
         }
+        statisticsBox.clear();
+        statisticsBox.main();
+
     }
 
     public void appendToText(String message){
         displayField.append(message);
+        statisticsBox.clear();
+        statisticsBox.main();
     }
 }
