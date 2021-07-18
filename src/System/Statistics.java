@@ -31,18 +31,10 @@ public class Statistics {
             sorter.mergeSort(tupleArray);
 
         String strTuples = "";
-//        int limit = 5;
-//
-//        for (Tuple tuple : tupleArray) {
-//            if (limit > 0) {
-//                strTuples += tuple + "\n";
-//                limit--;
-//            }
-//        }
 
         int index = tupleArray.length - 1;
         int i = 0;
-        while(i < 6 && index >= 0) {
+        while(i < 5 && index >= 0) {
             strTuples += tupleArray[index] + "\n";
             i++;
             index--;
