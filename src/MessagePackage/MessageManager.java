@@ -52,7 +52,6 @@ public class MessageManager {
 
         for (String word: splitContent){
             wordDictionary.insert(word, 1);
-            System.out.println(word + " Inserted");
         }
     }
 

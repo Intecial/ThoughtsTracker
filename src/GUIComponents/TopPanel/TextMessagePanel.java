@@ -22,20 +22,17 @@ public class TextMessagePanel extends JPanel {
         this.setVisible(true);
         this.setBackground(new Color(0xbdedff));
 
-
         displayField = new DisplayField();
-        scroll = new JScrollPane();
-        scroll.setPreferredSize(new Dimension(18, 240));
+
+        scroll = new JScrollPane(displayField);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.getViewport().setBackground(Color.WHITE);
-        scroll.setViewportView(displayField);
+        scroll.setPreferredSize(new Dimension(560, 240));
+
         statisticsBox = new StatisticPanel(m);
 
 
-//        this.add(scroll);
-        this.add(displayField);
-
-//        this.add(displayField.getScroll());
+        this.add(scroll);
 
         this.add(statisticsBox);
     }
