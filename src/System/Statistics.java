@@ -39,13 +39,21 @@ public class Statistics {
         sorter.mergeSort(tupleArray);
 
         String strTuples = "";
-        int limit = 5;
+//        int limit = 5;
+//
+//        for (Tuple tuple : tupleArray) {
+//            if (limit > 0) {
+//                strTuples += tuple + "\n";
+//                limit--;
+//            }
+//        }
 
-        for (Tuple tuple : tupleArray) {
-            if (limit > 0) {
-                strTuples += tuple + "\n";
-                limit--;
-            }
+        int index = tupleArray.length - 1;
+        int i = 0;
+        while(i < 6 && index >= 0) {
+            strTuples += tupleArray[index] + "\n";
+            i++;
+            index--;
         }
 
         String result = "Top 5 most used words: " + "\n" + strTuples;
