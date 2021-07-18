@@ -5,11 +5,12 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class MessageManager {
-    private Dictionary wordDictionary = new Dictionary(4861, 31);
+    private Dictionary wordDictionary;
     private ArrayList<Message> messageArrayList = new ArrayList<>();
     private final String filepath = System.getProperty("user.home")+ File.separator + "ThoughtTrackerCSV" + File.separator;
 
     public MessageManager() {
+        this.wordDictionary = new Dictionary(4861, 31);
     }
 
     public Message getMessage(int index){
@@ -57,6 +58,7 @@ public class MessageManager {
 
 
     public void loadSentence(ArrayList<Message> array){
+        this.wordDictionary = new Dictionary(4861, 31);
         for (Message msg: array) {
             splitSentence(msg);
         }
