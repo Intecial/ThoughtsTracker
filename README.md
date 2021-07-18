@@ -25,8 +25,6 @@ What field this program will help on in future :
 
 
 
-
-
 ------------------------------------------------------
 How to launch the program :
 
