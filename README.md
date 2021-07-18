@@ -4,7 +4,7 @@ Program name : Thoughts Tracker
 --------------------------------------------------------
 Purpose of the program :
 
-To provide aids to ones who needs place to resolve the stress on
+To give aid to ones who needs place to resolve the stress on
 To maintain a record for themselves what they have felt then and now
 To see the progress of life/mental health
 
