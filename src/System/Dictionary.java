@@ -1,5 +1,6 @@
 package System;
 
+import java.security.Key;
 import java.security.KeyException;
 
 public class Dictionary {
@@ -40,20 +41,25 @@ public class Dictionary {
 
         for(int i = 0; i < table.length; i++){
             if(table[i] != null){
-                try {
                     newHash.insert((String) table[i].getFirst(), (int) table[i].getSecond());
-                }catch (KeyException e){
-                    System.out.println(e.getMessage());
-                }
             }
         }
     }
 
-    public void insert(String key, int data) throws KeyException{
+    public int getCount() {
+        return count;
+    }
+
+    public void insert(String key, int data){
         if (isFull()){
             rehash();
         }
-        int position = linearProbe(key, true);
+        int position = -1;
+        try {
+            position = linearProbe(key, true);
+        }catch(KeyException e){
+            System.out.println(e.getMessage());
+        }
 
         if (table[position] == null){
             table[position] = new Tuple(key, data);
@@ -83,7 +89,7 @@ public class Dictionary {
                     return position;
                 }
                 else{
-                    throw new KeyException(key);
+                    throw new KeyException("Key Does Not Exist");
                 }
             }
             else if(table[position].getFirst().equals(key)){
@@ -93,7 +99,7 @@ public class Dictionary {
                 position = (position + 1) % table.length;
             }
         }
-        throw new KeyException(key);
+        throw new KeyException("Key Does Not Exist");
     }
 
     public int hash(String key){
@@ -140,6 +146,14 @@ public class Dictionary {
 
         return res;
 
+    }
+
+    public String toString(){
+        String returnString = "";
+        for(int i = 0; i < table.length; i++){
+            returnString += table[i] + " ";
+        }
+        return returnString;
     }
 
 }

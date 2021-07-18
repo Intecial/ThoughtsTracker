@@ -33,6 +33,10 @@ public class StatisticPanel extends JTextArea {
         this.append("Statistics\n");
 
         this.append(stats.generateMessageCount() + "\n");
+        this.append(stats.getCount() + "");
+        if (stats.getCount() > 4){
+            this.append(stats.generateTopFive());
+        }
     }
 
 

@@ -75,13 +75,13 @@ public class Sorter {
 
 //    public static void main(String[] args) {
 //
-//        System.Tuple[] test = new System.Tuple[5];
+//        Tuple[] test = new Tuple[5];
 //
-//        System.Tuple t1 = new System.Tuple(3, 7);
-//        System.Tuple t2 = new System.Tuple(2, 1);
-//        System.Tuple t3 = new System.Tuple(8, 3);
-//        System.Tuple t4 = new System.Tuple(9, 6);
-//        System.Tuple t5 = new System.Tuple(1, 2);
+//        Tuple t1 = new Tuple(3, 7);
+//        Tuple t2 = new Tuple(2, 1);
+//        Tuple t3 = new Tuple(8, 3);
+//        Tuple t4 = new Tuple(9, 6);
+//        Tuple t5 = new Tuple(1, 2);
 //
 //        test[0] = t1;
 //        test[1] = t2;
@@ -89,19 +89,19 @@ public class Sorter {
 //        test[3] = t4;
 //        test[4] = t5;
 //
-//        System.Sorter sort = new System.Sorter();
+//        Sorter sort = new Sorter();
 //        sort.mergeSort(test);
 //
 //        for(int i = 0; i < test.length; i++){
 //
-//            System.out.println(test[i].getSecond());
+//            System.out.println(test[i].getFirst()+" "+test[i].getSecond());
 //
 //        }
 //        System.out.println("-----------------------------------");
 //
 //        for(int j = test.length-1; j > test.length - 4; j--){
 //
-//            System.out.println(test[j].getSecond());
+//            System.out.println(test[j].getFirst()+" "+test[j].getSecond());
 //
 //        }
 //
