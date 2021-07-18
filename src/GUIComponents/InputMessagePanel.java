@@ -74,11 +74,13 @@ public class InputMessagePanel extends JPanel implements ActionListener{
         if(e.getSource() == enter) {
             String messageToDisplay = null;
             message = new Message(label, inputField.getText());
+
             if(m.getMessageArrayList().size() != 0) {
-                messageToDisplay = "\n" + message.getContent();
+                messageToDisplay = "\n" + message.displayMessage();
             }else if(m.getMessageArrayList().size() == 0){
-                messageToDisplay = message.getContent();
+                messageToDisplay = message.displayMessage();
             }
+
             m.addMessage(message);
             tmp.appendToText(messageToDisplay);
 

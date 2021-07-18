@@ -38,9 +38,9 @@ public class TextMessagePanel extends JPanel {
 
             ArrayList<Message> arList = m.getMessageArrayList();
             if(i != 0) {
-                displayField.append("\n" + arList.get(i).getContent());
+                displayField.append("\n" + arList.get(i).displayMessage());
             }else{
-                displayField.append(arList.get(i).getContent());
+                displayField.append(arList.get(i).displayMessage());
             }
         }
     }
