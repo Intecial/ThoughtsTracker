@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class MessageManager {
     private Dictionary wordDictionary = new Dictionary(4861, 31);
     private ArrayList<Message> messageArrayList = new ArrayList<>();
-    private final String filepath = "."+ File.separator + "saves" + File.separator;
+    private final String filepath = "."+ File.separator + "src" + File.separator + "saves" + File.separator;
 
     public MessageManager() {
     }
