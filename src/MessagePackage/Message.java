@@ -54,7 +54,7 @@ public class Message {
         String date = dateTime.getDayOfMonth() + "/" + dateTime.getMonth() + "/" + dateTime.getYear();
         String time = dateTime.getHour() + ":" + dateTime.getMinute() + ":" +dateTime.getSecond();
 
-        String formatted = "[" + date + "]" + "[" + time + "]" + "  {" + this.content + "} (" + this.label + ")";
+        String formatted = "[" + date + "]" + "[" + time + "]" + "  \"" + this.content + "\" (" + this.label + ")";
 
         return formatted;
     }
