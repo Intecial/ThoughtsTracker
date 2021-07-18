@@ -2,10 +2,6 @@ import java.util.ArrayList;
 
 public class Sorter {
 
-//    private ArrayList<>
-
-
-
     public void quickSort(int[] list){
 
         int start = 0;
