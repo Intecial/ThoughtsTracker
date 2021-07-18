@@ -1,6 +1,4 @@
 import java.security.KeyException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Dictionary {
     private final int MIN_CAPACITY = 1;
@@ -41,7 +39,7 @@ public class Dictionary {
         for(int i = 0; i < table.length; i++){
             if(table[i] != null){
                 try {
-                    newHash.insert((String) table[i].getFirst(), (String) table[i].getSecond());
+                    newHash.insert((String) table[i].getFirst(), (int) table[i].getSecond());
                 }catch (KeyException e){
                     System.out.println(e.getMessage());
                 }
@@ -49,16 +47,20 @@ public class Dictionary {
         }
     }
 
-    public void insert(String key, String data) throws KeyException{
+    public void insert(String key, int data) throws KeyException{
         if (isFull()){
             rehash();
         }
         int position = linearProbe(key, true);
 
         if (table[position] == null){
+            table[position] = new Tuple(key, data);
             count++;
+        } else {
+            int value = (int)table[position].getSecond() + data;
+            table[position] = new Tuple(key, value);
         }
-        table[position] = new Tuple(key, data);
+
     }
 
     public String getItem(String key) throws KeyException {
@@ -118,7 +120,7 @@ public class Dictionary {
             Tuple item = table[position];
             table[position] = null;
             count--;
-            insert((String) item.getFirst(), (String) item.getSecond());
+            insert((String) item.getFirst(), (int) item.getSecond());
             position = (position + 1) % table.length;
         }
 
