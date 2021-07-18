@@ -41,7 +41,7 @@ public class TopButtonPanel extends JPanel implements ActionListener {
         if(e.getSource() == save){
             System.out.println("Saved");
             Prompt prompt = new Prompt();
-//            m.saveData("wait");
+            m.saveData(prompt.getFilename());
         }else if(e.getSource() == load){
             System.out.println("Loaded");
 //            m.loadData();
