@@ -65,8 +65,15 @@ public class MessageManager {
 
     public void saveData(String filename) {
 
+        File directory = new File(this.filepath);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
         try {
-            PrintWriter writer = new PrintWriter(new File(this.filepath + filename));
+            File file = new File(this.filepath + filename);
+
+            PrintWriter writer = new PrintWriter(file);
 
             for (Message message : messageArrayList) {
                 String csvLine = message.toString() + "\n";
