@@ -24,7 +24,7 @@ public class AppFrame extends JFrame {
         this.setResizable(true);
         this.setSize(920, 450);
         this.setVisible(true);
-        this.getContentPane().setBackground(new Color(0xbdedff));
+        this.getContentPane().setBackground(new Color(0x35aedb));
 
         this.add(saveAndLoad);
         this.add(textMessages);

@@ -101,7 +101,8 @@ public class InputMessagePanel extends JPanel implements ActionListener{
         enter.setVerticalTextPosition(JButton.CENTER);
 
         enter.setFont(new Font("Comic Sans", Font.PLAIN, 20));
-        enter.setBackground(new Color(0x6fbdd1));
+        enter.setBackground(new Color(0x210fba));
+        enter.setForeground(Color.WHITE);
         enter.setBorder(BorderFactory.createRaisedBevelBorder());
     }
 }

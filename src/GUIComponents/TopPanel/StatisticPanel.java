@@ -12,7 +12,7 @@ public class StatisticPanel extends JTextArea {
     private MessageManager m;
     public StatisticPanel(){
 
-        this.setPreferredSize(new Dimension(240, 240));
+        this.setPreferredSize(new Dimension(260, 240));
         this.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         this.setEditable(false);
         this.setLayout(new FlowLayout());

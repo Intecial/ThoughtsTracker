@@ -21,7 +21,7 @@ public class TopButtonPanel extends JPanel implements ActionListener {
         this.m = m;
         this.tmp = tmp;
         this.setBounds(0, 0, 150, 20);
-        this.setBackground(new Color(0xbdedff));
+        this.setBackground(new Color(0x35aedb));
         this.setVisible(true);
 
         save = new JButton("Save");
@@ -29,12 +29,18 @@ public class TopButtonPanel extends JPanel implements ActionListener {
         save.setHorizontalTextPosition(JButton.CENTER);
         save.addActionListener(this);
         save.setFocusable(false);
+        save.setBorder(BorderFactory.createRaisedBevelBorder());
+        save.setBackground(new Color(0x210fba));
+        save.setForeground(Color.WHITE);
 
         load = new JButton("Load");
         load.setHorizontalTextPosition(JButton.CENTER);
         load.setVerticalTextPosition(JButton.CENTER);
         load.addActionListener(this);
         load.setFocusable(false);
+        load.setBorder(BorderFactory.createRaisedBevelBorder());
+        load.setBackground(new Color(0x210fba));
+        load.setForeground(Color.WHITE);
 
         this.add(save);
         this.add(load);

@@ -10,7 +10,7 @@ public class SavePrompt extends Prompt implements ActionListener {
     public SavePrompt(MessageManager m){
         super(m);
         button.addActionListener(this);
-
+        prompt.setTitle("Save");
     }
 
     @Override

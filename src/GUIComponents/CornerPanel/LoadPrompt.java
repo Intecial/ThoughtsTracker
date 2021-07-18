@@ -14,6 +14,7 @@ public class LoadPrompt extends Prompt implements ActionListener {
        super(m);
         button.addActionListener(this);
         this.tmp = tmp;
+        prompt.setTitle("Load");
     }
 
     @Override
