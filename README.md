@@ -1,6 +1,7 @@
-Program name : Thoughts Tracker
 
 Author : Louis Juliano, Giyeong Lee, Lars Tan Pei Sheng
+
+Program name : Thoughts Tracker
 --------------------------------------------------------
 Purpose of the program :
 
