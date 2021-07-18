@@ -11,11 +11,11 @@ public class Statistics {
     private ArrayList<Message> wordList = new ArrayList<>();
     private ArrayList<Tuple> topFive = new ArrayList<>();
 
-    public Statistics(MessageManager messageManager){
+    public Statistics(MessageManager messageManager) {
         this.messageManager = messageManager;
     }
 
-    public void topFive(){
+    public ArrayList<Tuple> generateTopFive(){
 
         wordList = messageManager.getMessageArrayList();
         splitSentence(wordList);
@@ -34,7 +34,23 @@ public class Statistics {
 
         }
 
+        return topFive;
+
     }
+
+    public String generateMessageCount() {
+
+        int count = 0;
+
+        for (Message msg: messageManager.getMessageArrayList()) {
+            count++;
+        }
+
+        String result = "Total Messages: " + count;
+        return result;
+    }
+
+
 
     public void splitSentence(ArrayList<Message> array){
 
