@@ -4,7 +4,7 @@ Program name : Thoughts Tracker
 --------------------------------------------------------
 Purpose of the program :
 
-To give aid to ones who needs place to resolve the stress on
+To aid those who needs place to relieve stress
 To maintain a record for themselves what they have felt then and now
 To see the progress of life/mental health
 
@@ -15,6 +15,7 @@ It allows the user to write a short sentences to keep records as in a form of di
 It gives the dates and time to provide user sense of time when it was written
 Provides save and load functionality : To save, click the "save" button on top left, enter the file name finishing with the ".csv" at the end, then press submit
                                        To load, click the "load" button on top left, enter the file name finishing with the ".csv" at the end, then press submit
+NB: The saved file is saved to your computer user folder
 
 It gives the statistics of the records made.
 This contains the word counts and five most frequenty used words on the right side of the program which will be reflected everytime user adds new sentences
@@ -30,5 +31,6 @@ Being relaxed via writing ideas/thoughts down - It helps you to calm yourself do
 
 ------------------------------------------------------
 How to launch the program :
-
-1)
+1) Go to Application Folder
+2) Run the executable .jar file (ThoughtsTracker.jar)
+NB: If you cannot double click on the file, right click the file, go to open with, and use Java SE Binary Platform
