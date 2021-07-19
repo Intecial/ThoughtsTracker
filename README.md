@@ -33,4 +33,14 @@ Being relaxed via writing ideas/thoughts down - It helps you to calm yourself do
 How to launch the program :
 1) Go to Application Folder
 2) Run the executable .jar file (ThoughtsTracker.jar)
+
+To save:
+1) Click the save button on the top left
+2) enter a file name along with the file extension (such as your_file_name.csv)
+
+To load:
+1) Make sure the target file is in the correct directory (Users/yourusername/ThoughtsTrackerCSV/)
+2) Click the load button next to the save button
+3) type in the name of the file along with the file extension
+
 NB: If you cannot double click on the file, right click the file, go to open with, and use Java SE Binary Platform
